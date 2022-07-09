@@ -25,40 +25,58 @@ class ViewController: NSViewController {
         
         if event.keyCode == 34 {
             NSLog("Increasing opacity")
-            theView.fillDirty = true
-            theView.alpha = theView.alpha + 0.1
+            theView.alpha = theView.alpha + 0.05
             self.view.display()
         }
 
         if event.keyCode == 2 {
             NSLog("Decreasing opacity")
-            theView.fillDirty = true
-            theView.alpha = theView.alpha - 0.1
+            theView.alpha = theView.alpha - 0.05
             self.view.display()
         }
 
         if event.keyCode == 126 {
             NSLog("Increasing Y coordinate")
             theView.yloc = theView.yloc + 10
-            theView.fillDirty = false
             self.view.display()
         }
         if event.keyCode == 125 {
             NSLog("Decreasing Y coordinate")
             theView.yloc = theView.yloc - 10
-            theView.fillDirty = false
             self.view.display()
         }
         if event.keyCode == 124 {
             NSLog("Increasing X coordinate")
             theView.xloc = theView.xloc + 10
-            theView.fillDirty = false
             self.view.display()
         }
         if event.keyCode == 123 {
             NSLog("Decreasing X coordinate")
             theView.xloc = theView.xloc - 10
-            theView.fillDirty = false
+            self.view.display()
+        }
+        
+        if event.keyCode == 3 {
+            NSLog("Increasing the width")
+            theView.width += 10
+            self.view.display()
+        }
+        
+        if event.keyCode == 17 {
+            NSLog("Decreasing the width")
+            theView.width -= 10
+            self.view.display()
+        }
+        
+        if event.keyCode == 11 {
+            NSLog("Increasing the height")
+            theView.height += 10
+            self.view.display()
+        }
+        
+        if event.keyCode == 1 {
+            NSLog("Decreasing the height")
+            theView.height -= 10
             self.view.display()
         }
 

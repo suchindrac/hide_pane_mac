@@ -18,8 +18,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         let window = NSApplication.shared.windows.first
         window?.isOpaque = false
-        window?.backgroundColor = .clear
+        window?.backgroundColor = NSColor.clear
+        window?.ignoresMouseEvents = true
+        
         window?.level = NSWindow.Level.popUpMenu
+        
         
         item = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
         let itemImage = NSImage(named: "hide_pane")
@@ -36,22 +39,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
         item?.menu = menu
         
-        window?.ignoresMouseEvents = true
-        // window?.backgroundColor = NSColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 0.8)
-        window?.backgroundColor = NSColor.clear
-        window?.isOpaque = false
-        
-        
         window?.toggleFullScreen(self)
         
         window?.collectionBehavior = NSWindow.CollectionBehavior.fullScreenPrimary
         let screenFrame = NSScreen.main?.frame
         
         window?.setFrame(screenFrame!, display: true)
-        
-        let myView = MyView()
-        window?.contentView = myView
-        
     }
     
     @objc func mainAction() {
