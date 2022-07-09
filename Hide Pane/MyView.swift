@@ -14,14 +14,17 @@ class MyView: NSView {
     var width = 400.0
     var height = 200.0
     var alpha = 0.8
+    var red = 1.0
+    var green = 1.0
+    var blue = 1.0
+    var invert = false
     
     var myRect = NSRect(x: 0.0, y: 0.0, width: 400.0, height: 200.0)
-    var fillDirty = true
 
     override func draw(_ dirtyRect: NSRect) {
         super.draw(dirtyRect)
-
-        let myColor = NSColor(red: 1.0, green: 1.0, blue: 1.0, alpha: self.alpha)
+        
+        let myColor = NSColor(red: self.red, green: self.green, blue: self.blue, alpha: self.alpha)
         myColor.setFill()
         dirtyRect.fill()
             

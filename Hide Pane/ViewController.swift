@@ -80,6 +80,22 @@ class ViewController: NSViewController {
             self.view.display()
         }
 
+        if event.keyCode == 45 {
+            NSLog("Invert the colors of desktop")
+            if theView.invert == false {
+                theView.red = 0.0
+                theView.blue = 0.0
+                theView.green = 0.0
+                theView.invert = true
+            } else {
+                theView.red = 1.0
+                theView.blue = 1.0
+                theView.green = 1.0
+                theView.invert = false
+            }
+            self.view.display()
+        }
+
     }
     
     override func viewWillDisappear() {
