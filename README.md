@@ -1,6 +1,16 @@
 # hide_pane_mac
 
-Absolutely new to iOS coding. Just my first attempt to create an app
- that draws a movable transparent pane on the desktop
+* Summary
+
+My first attempt to create an app that draws a movable transparent pane on the desktop
  
-This is still work in progress
+* Functionality
+
+The following functionality is available:
+
+** Increase/reduce the width of the hole using "f" or "t"
+** Increase/reduce the height of the hole using "b" or "s"
+** Increase/reduce the alpha of surrounding area using
+    "i" or "d"
+** Move the hole using arrow keys
+** Invert colors of the desktop using "n"
