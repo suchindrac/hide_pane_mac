@@ -14,3 +14,4 @@ The following functionality is available:
     "i" or "d"
 * Move the hole using arrow keys
 * Invert colors of the desktop using "n"
+* Point the hole to a certain location using "p"

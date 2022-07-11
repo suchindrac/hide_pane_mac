@@ -18,6 +18,17 @@ class ViewController: NSViewController {
         }
     }
     
+	if event.keyCode == 35 {
+        NSLog("Setting current mouse location as hole coordinate")
+        let mloc = NSEvent.mouseLocation
+        let xloc = mloc.x
+        let yloc = mloc.y
+            
+        theView.xloc = xloc
+        theView.yloc = yloc
+            
+        self.view.display()
+    }
     override func keyDown(with event: NSEvent) {
         NSLog(String(event.keyCode))
         
