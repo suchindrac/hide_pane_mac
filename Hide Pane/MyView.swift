@@ -18,6 +18,8 @@ class MyView: NSView {
     var green = 1.0
     var blue = 1.0
     var invert = false
+    var iinvert = false
+    var hide = false
     
     var myRect = NSRect(x: 0.0, y: 0.0, width: 400.0, height: 200.0)
 
@@ -43,8 +45,13 @@ class MyView: NSView {
         if self.yloc < 0 {
             self.yloc = 0
         }
-            
+        
         self.myRect = NSRect(x: self.xloc, y: self.yloc, width: self.width, height: self.height)
         self.myRect.fill(using: NSCompositingOperation.clear)
+        
+        if hide == true {
+            self.myRect.fill(using: NSCompositingOperation.copy)
+            hide = false
+        }
     }
 }

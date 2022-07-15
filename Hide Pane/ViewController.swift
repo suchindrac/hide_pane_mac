@@ -18,21 +18,33 @@ class ViewController: NSViewController {
         }
     }
     
-	if event.keyCode == 35 {
-        NSLog("Setting current mouse location as hole coordinate")
-        let mloc = NSEvent.mouseLocation
-        let xloc = mloc.x
-        let yloc = mloc.y
-            
-        theView.xloc = xloc
-        theView.yloc = yloc
-            
-        self.view.display()
-    }
     override func keyDown(with event: NSEvent) {
         NSLog(String(event.keyCode))
         
         let theView = self.view as! MyView
+        
+        if event.keyCode == 35 {
+            NSLog("Setting current mouse location as hole coordinate")
+            let mloc = NSEvent.mouseLocation
+            let xloc = mloc.x
+            let yloc = mloc.y
+            
+            theView.xloc = xloc
+            theView.yloc = yloc
+            
+            self.view.display()
+        }
+
+        if event.keyCode == 15 {
+            NSLog("Hiding your hole!")
+            let mloc = NSEvent.mouseLocation
+            theView.xloc = mloc.x
+            theView.yloc = mloc.y
+            theView.hide = true
+            
+            self.view.display()
+        }
+
         
         if event.keyCode == 34 {
             NSLog("Increasing opacity")
